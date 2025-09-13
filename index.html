@@ -97,11 +97,8 @@
         <div class="container">
           <a class="navbar-brand d-flex align-items-center" href="#">
             <div class="logo me-2"><img src="./img/logo.svg" alt="logo"></div>
-            <div>
-              <small class="text-muted">Grocery Store</small>
-            </div>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" onclick="openMenu()">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="input-group mt-3">
@@ -111,6 +108,8 @@
           </div>
           <div class="collapse navbar-collapse" id="navMain">
             <ul class="navbar-nav ms-auto align-items-lg-center">
+              <div id="sideMenu" class="side-menu">
+              <button class="close-btn" onclick="closeMenu()">&times;</button>
               <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
               <li class="nav-item dropdown">
@@ -133,6 +132,7 @@
                     class="badge bg-success" id="cartCount">0</span></a></li>
             </ul>
           </div>
+          <div id="overlay" class="overlay" onclick="closeMenu()"></div>
         </div>
       </nav>
     </div>
@@ -228,6 +228,10 @@
           <div class="category-item">
             <img src="./img/category-thumb-5.jpg" alt="">
             <div class="category-title">Beverages</div>
+          </div>
+           <div class="category-item">
+            <img src="./img/category-thumb-1.jpg" alt="">
+            <div class="category-title">Fruits & Veges</div>
           </div>
           <div class="category-item">
             <img src="./img/category-thumb-6.jpg" alt="">
@@ -818,7 +822,6 @@
     </section>
     
     <!--our formaers-->
-  </section> --
   <section class="reviews-section" id="farmer">
     <h2 style="text-align:center; margin-bottom:20px;">Our Farmers</h2>
     <div class="reviews-wrapper">
@@ -958,7 +961,7 @@
     </section>
 
     <!-- Blog Section -->
-    <section class="blog-section">
+    <section class="blog-section"> 
       <h2>Our Recent Blog</h2>
       <div class="blogs">
         <div class="blog">
@@ -1069,7 +1072,7 @@
     </div>
   </section>
 
-    <!-- Footer -->
+    <!--Footer -->
     <footer id="footer">
       <div>
         <img src="./img/logo.svg" alt="">
@@ -1118,7 +1121,7 @@
         <h4>Subscribe Us</h4>
         <p>Subscribe to our newsletter to get updates about our grand offers.</p>
         <input type="email" placeholder="Email Address">
-        <button>Subscribe</button>
+        <button>Send</button>
       </div>
     </footer>
 
@@ -1126,9 +1129,6 @@
   © 2024 Organic. All rights reserved. | Developed by 
   <a href="https://github.com/sathish05007" target="_blank">Sathish</a>
 </div>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"></script>
@@ -1136,6 +1136,17 @@
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+  function openMenu() {
+    document.getElementById("sideMenu").style.width = "280px";
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function closeMenu() {
+    document.getElementById("sideMenu").style.width = "0";
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
 </body>
 
 </html>
