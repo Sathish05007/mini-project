@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Grocery Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--HEADER & NAVBAR--->
+<header>
+  <div class="site-wrap container-fluid p-0" id="siteWrap">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <div class="logo me-2"><img src="./img/logo.svg" alt="logo"></div>
+        </a>
+
+        <!-- Search (desktop only) -->
+        <div class="input-group d-none d-lg-flex mx-3">
+          <input id="searchInput" type="search" class="form-control search-input"
+            placeholder="Search products... (type to filter)" aria-label="Search">
+          <button class="btn btn-success" id="searchBtn">Search</button>
+        </div>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" onclick="openMenu()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navbar -->
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center d-none d-lg-flex">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Pages</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#category">Products</a></li>
+                <li><a class="dropdown-item" href="#farmer">Our Farmers</a></li>
+                <li><a class="dropdown-item" href="#reviews">Reviews</a></li>
+                <li><a class="dropdown-item" href="#footer">Contact Us</a></li>
+                <li><a class="dropdown-item" href="#blog">Blogs</a></li>
+                <li><a class="dropdown-item" href="#features">Features</a></li>
+                <li><a class="dropdown-item" href="#faq">Faq</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#profile">User Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="#wishlist">Wishlist <span
+                  class="badge bg-success" id="wishCount">0</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#cart">Cart <span
+                  class="badge bg-success" id="cartCount">0</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Side Menu (Mobile) -->
+    <div id="sideMenu" class="side-menu">
+      <button class="close-btn" onclick="closeMenu()">&times;</button>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Pages</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#category">Products</a></li>
+            <li><a class="dropdown-item" href="#farmer">Our Farmers</a></li>
+            <li><a class="dropdown-item" href="#reviews">Reviews</a></li>
+            <li><a class="dropdown-item" href="#footer">Contact Us</a></li>
+            <li><a class="dropdown-item" href="#blog">Blogs</a></li>
+            <li><a class="dropdown-item" href="#features">Features</a></li>
+            <li><a class="dropdown-item" href="#faq">Faq</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#profile">User Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="#wishlist">Wishlist <span class="badge bg-success">0</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="#cart">Cart <span class="badge bg-success">0</span></a></li>
+      </ul>
+    </div>
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+  </div>
+</header>
+
+
+  
+<main>
+    <!--HERO SECTION--->
+    <section class="home" id="home">
+      <div class="hero">
+        <div class="title">
+          <h1 class=""><span>Organic</span> Foods at your <span>Doorsteps</span></h1>
+          <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque.</p>
+
+        </div>
+        <div class="q-btn">
+          <button><a href="">START SHOPPING</a></button>
+          <button id="jn"><a href="">JOIN NOW</a></button>
+        </div>
+        <div class="num">
+          <div class="num1">
+            <h3>14k+</h3>
+            <p>PRODUCT VARIETIES</p>
+          </div>
+          <div class="num1">
+            <h3>50k+</h3>
+            <p>HAPPY CUSTOMERS</p>
+          </div>
+          <div class="num1">
+            <h3>10k+</h3>
+            <p>STORE LOCATIONS</p>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box1">
+          <div class="b-l">
+            <img src="./img/recycle.png" alt="">
+          </div>
+          <div class="b-r">
+            <h4>Fresh from farm</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, amet!</p>
+          </div>
+
+        </div>
+        <div class="box2">
+          <div class="b-l">
+            <img src="./img/leaf .png" alt="">
+          </div>
+          <div class="b-r">
+            <h4>Fresh from farm</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, amet!</p>
+          </div>
+        </div>
+        <div class="box3">
+          <div class="b-l">
+            <img src="./img/lorry.png" alt="">
+          </div>
+          <div class="b-r">
+            <h4>Fresh from farm</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, amet!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Category--->
+    <section id="category">
+      <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="fw-bold">Category</h3>
+          <div class="d-flex gap-2 align-items-center">
+            <button class="btn btn-success">View All</button>
+            <button id="btnLeft" class="scroll-btn" aria-label="scroll left">&#10094;</button>
+            <button id="btnRight" class="scroll-btn" aria-label="scroll right">&#10095;</button>
+          </div>
+        </div>
+
+        <div id="categoryBox" class="category-container border rounded">
+          <div class="category-item">
+            <img src="./img/category-thumb-1.jpg" alt="">
+            <div class="category-title">Fruits & Veges</div>
+          </div>
+          <div class="category-item">
+            <img src="./img/category-thumb-2.jpg" alt="">
+            <div class="category-title">Beverages</div>
+          </div>
+          <div class="category-item">
+            <img src="./img/category-thumb-3.jpg" alt="">
+            <div class="category-title">Breads & Sweets</div>
+          </div>
+          <div class="category-item">
+            <img src="./img/category-thumb-4.jpg" alt="">
+            <div class="category-title">Fruits & Veges</div>
+          </div>
+          <div class="category-item">
+            <img src="./img/category-thumb-5.jpg" alt="">
+            <div class="category-title">Beverages</div>
+          </div>
+           <div class="category-item">
+            <img src="./img/category-thumb-1.jpg" alt="">
+            <div class="category-title">Fruits & Veges</div>
+          </div>
+          <div class="category-item">
+            <img src="./img/category-thumb-6.jpg" alt="">
+            <div class="category-title">Breads & Sweets</div>
+          </div>
+          <div class="category-item">
+            <img src="./img/category-thumb-7.jpg" alt="">
+            <div class="category-title">Fruits & Veges</div>
+          </div>
+          <div class="category-item">
+            <img src="img/category-thumb-8.jpg" alt="">
+            <div class="category-title">Beverages</div>
+          </div>
+          <div class="category-item">
+            <img src="./img/category-thumb-1.jpg" alt="">
+            <div class="category-title">Meat Products</div>
+          </div>
+          <div class="category-item">
+            <img src="./img/category-thumb-2.jpg" alt="">
+            <div class="category-title">Meat Products</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="products">
+  <div class="products-container">
+    <h2 class="section-title">Best selling products</h2>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <img src="./img/product-thumb-1.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-2.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-3.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-4.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-5.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-6.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-7.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-8.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-9.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-10.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+    <!---ADS BANNERS--->
+    <section id="ads">
+      <div class="banner-container">
+
+        <div class="banner">
+          <img src="./img/banner-ad-1.jpg" alt="Items on Sale">
+          <div class="banner-content">
+            <h2>Items on SALE</h2>
+            <p>Discounts up to 30%</p>
+            <a href="#">SHOP NOW</a>
+          </div>
+        </div>
+        <div class="right-banners">
+          <div class="banner">
+            <img src="./img/banner-ad-2.jpg" alt="Combo offers">
+            <div class="banner-content">
+              <h2>Combo offers</h2>
+              <p>Discounts up to 50%</p>
+              <a href="#">SHOP NOW</a>
+            </div>
+          </div>
+
+          <div class="banner">
+            <img src="./img/banner-ad-3.jpg" alt="Discount Coupons">
+            <div class="banner-content">
+              <h2>Discount Coupons</h2>
+              <p>Discounts up to 40%</p>
+              <a href="#">SHOP NOW</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="products">
+  <div class="products-container">
+    <h2 class="section-title">Featured products</h2>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <img src="./img/product-thumb-11.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-12.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-13.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-14.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-15.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-16.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-17.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-18.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-19.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-20.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+    <section id="products">
+  <div class="products-container">
+    <h2 class="section-title">Most popular products</h2>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <img src="./img/product-thumb-21.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-22.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-23.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-24.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-25.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-26.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-27.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-28.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+            <div class="product-card">
+        <img src="./img/product-thumb-29.png" alt="Cheese">
+        <h5 class="product-title">Sharp Cheddar Cheese Block</h5>
+        <div class="rating">★★★★★ (32)</div>
+        <p><span class="old-price">$14.00</span> <span class="price">$12.00</span> <span class="discount">10% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="./img/product-thumb-30.png" alt="Apples">
+        <h5 class="product-title">Fresh Red Apples</h5>
+        <div class="rating">★★★★☆ (20)</div>
+        <p><span class="old-price">$10.00</span> <span class="price">$8.00</span> <span class="discount">20% OFF</span></p>
+        <div class="actions">
+          <input type="number" class="qty" value="1" min="1">
+          <button class="add-cart"> Add to Cart</button>
+          <button class="wishlist">♡</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+    <!--our formaers-->
+  <section class="reviews-section" id="farmer">
+    <h2 style="text-align:center; margin-bottom:20px;">Our Farmers</h2>
+    <div class="reviews-wrapper">
+      <div class="reviews-track">
+        
+        <div class="review-card">
+          <img src="./img/f1.webp" alt="Farmer 1" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f2.webp" alt="Farmer 2" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f3.webp" alt="Farmer 3" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f4.webp" alt="Farmer 4" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f5.jpeg" alt="Farmer 5" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f6.jpeg" alt="Farmer 6" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f7.webp" alt="Farmer 7" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f8.webp" alt="Farmer 8" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f9.webp" alt="Farmer 9" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+         <div class="review-card">
+          <img src="./img/f10.jpeg" alt="Farmer 10" class="review-img">
+          <div class="review-name">Ramesh Kumar</div>
+          <p class="farmer-phone">📞 +91 9876543210</p>
+          <p class="farmer-loc">📍Hyderabad</p>
+        </div>
+
+      
+
+      </div>
+    </div>
+  </section>
+
+    <!-- Tags Section -->
+    <section class="tags-section" id="faq">
+      <h2>People are also looking for</h2>
+      <div class="tags">
+        <span>Blue diamon almonds</span>
+        <span>Angie’s Boomchickapop Corn</span>
+        <span>Salty kettle Corn</span>
+        <span>Chobani Greek Yogurt</span>
+        <span>Sweet Vanilla Yogurt</span>
+        <span>Foster Farms Takeout Crispy wings</span>
+        <span>Warrior Blend Organic</span>
+        <span>Chao Cheese Creamy</span>
+        <span>Chicken meatballs</span>
+         <span>Blue diamon almonds</span>
+        <span>Angie’s Boomchickapop Corn</span>
+        <span>Salty kettle Corn</span>
+        <span>Chobani Greek Yogurt</span>
+        <span>Sweet Vanilla Yogurt</span>
+        <span>Foster Farms Takeout Crispy wings</span>
+        <span>Warrior Blend Organic</span>
+        <span>Chao Cheese Creamy</span>
+        <span>Chicken meatballs</span>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="feature-box">
+        <img src="./img/fast-delivery.png" alt="">
+        <h3>Free delivery</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+      </div>
+      <div class="feature-box">
+        <img src="./img/security-payment.png" alt="">
+        <h3>100% secure payment</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+      </div>
+      <div class="feature-box">
+        <img src="./img/quality-assurance.png" alt="">
+        <h3>Quality guarantee</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+      </div>
+      <div class="feature-box">
+        <img src="./img/check.png" alt="">
+        <h3>Guaranteed savings</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+      </div>
+      <div class="feature-box">
+        <img src="./img/gift.png" alt="">
+        <h3>Daily offers</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+      </div>
+    </section>
+
+    <!-- App Banner -->
+    <section class="app-banner">
+      <div class="text">
+        <h2>Download Organic App</h2>
+        <p>Online Orders made easy, fast and reliable</p>
+        <img src="./img/img-app-store.png" alt="App Store">
+        <img src="./img/img-google-play.png" alt="Google Play">
+      </div>
+      <div class="img"></div>
+
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog"> 
+      <h2>Our Recent Blog</h2>
+      <div class="blogs">
+        <div class="blog">
+          <img src="./img/post-thumbnail-1.jpg" alt="">
+          <div class="blog-content">
+            <p>22 AUG 2021 | TIPS & TRICKS</p>
+            <h3>Top 10 casual look ideas to dress up your kids</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+          </div>
+        </div>
+        <div class="blog">
+          <img src="./img/post-thumbnail-2.jpg" alt="">
+          <div class="blog-content">
+            <p>25 AUG 2021 | TRENDING</p>
+            <h3>Latest trends of wearing street wears supremely</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+          </div>
+        </div>
+        <div class="blog">
+          <img src="./img/post-thumbnail-3.jpg" alt="">
+          <div class="blog-content">
+            <p>28 AUG 2021 | INSPIRATION</p>
+            <h3>10 Different Types of comfortable clothes ideas for women</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+          </div>
+        </div>
+         <div class="blog">
+          <img src="./img/post-thumbnail-1.jpg" alt="">
+          <div class="blog-content">
+            <p>22 AUG 2021 | TIPS & TRICKS</p>
+            <h3>Top 10 casual look ideas to dress up your kids</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--reviwes-->
+      <section class="reviews-section" id="reviews">
+    <h2 style="text-align:center; margin-bottom:20px;">What Our Customs Say</h2>
+    <div class="reviews-wrapper">
+      <div class="reviews-track">
+        
+        <!-- Reviews Set 1 -->
+        <div class="review-card">
+          <img src="./img/c1.webp" alt="Farmer 1" class="review-img">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="review-name">Ramesh Kumar</div>
+          <div class="review-message">The organic seeds are of great quality. My farm yield has doubled!</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/c2.webp" alt="Farmer 2" class="review-img">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <div class="review-name">Sita Devi</div>
+          <div class="review-message">I loved the support team’s guidance. Very helpful for beginners.</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/c3.webp" alt="Farmer 3" class="review-img">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="review-name">Mahesh Reddy</div>
+          <div class="review-message">Completely satisfied with the natural fertilizers. Worth buying.</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/c4.webp" alt="Farmer 4" class="review-img">
+          <div class="stars">⭐⭐⭐</div>
+          <div class="review-name">Anita Sharma</div>
+          <div class="review-message">Good products but delivery took some extra days.</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/c5.webp" alt="Farmer 5" class="review-img">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="review-name">Ravi Teja</div>
+          <div class="review-message">Best marketplace for organic farming. Highly recommended!</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/c6.jpeg" alt="Farmer 6" class="review-img">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="review-name">Ramesh Kumar</div>
+          <div class="review-message">The organic seeds are of great quality. My farm yield has doubled!</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/c7.webp" alt="Farmer 7" class="review-img">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <div class="review-name">Sita Devi</div>
+          <div class="review-message">I loved the support team’s guidance. Very helpful for beginners.</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/c8.webp" alt="Farmer 8" class="review-img">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="review-name">Mahesh Reddy</div>
+          <div class="review-message">Completely satisfied with the natural fertilizers. Worth buying.</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/c9.jpeg" alt="Farmer 9" class="review-img">
+          <div class="stars">⭐⭐⭐</div>
+          <div class="review-name">Anita Sharma</div>
+          <div class="review-message">Good products but delivery took some extra days.</div>
+        </div>
+
+        <div class="review-card">
+          <img src="./img/cs10.webp" alt="Farmer 10" class="review-img">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="review-name">Ravi Teja</div>
+          <div class="review-message">Best marketplace for organic farming. Highly recommended!</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!--Footer -->
+    <footer id="footer">
+      <div>
+        <img src="./img/logo.svg" alt="">
+        <div class="social">
+        <a href=""><img src="./img/instagram.png" alt=""></a>
+        <a href=""><img src="./img/twitter.png" alt=""></a>
+        <a href=""><img src="./img/youtube.png" alt=""></a>
+        <a href=""><img src="./img/amzon.png" alt=""></a>
+        </div>
+
+      </div>
+      <div>
+        <h4>Organic</h4>
+        <ul>
+          <li>About us</li>
+          <li>Conditions</li>
+          <li>Our Journals</li>
+          <li>Careers</li>
+          <li>Affiliate Programme</li>
+          <li>Ultras Press</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Offers</li>
+          <li>Discount Coupons</li>
+          <li>Stores</li>
+          <li>Track Order</li>
+          <li>Shop</li>
+          <li>Info</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Customer Service</h4>
+        <ul>
+          <li>FAQ</li>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Returns & Refunds</li>
+          <li>Cookie Guidelines</li>
+          <li>Delivery Information</li>
+        </ul>
+      </div>
+      <div class="subscribe">
+        <h4>Subscribe Us</h4>
+        <p>Subscribe to our newsletter to get updates about our grand offers.</p>
+        <input type="email" placeholder="Email Address">
+        <button>Send</button>
+      </div>
+    </footer>
+
+    <div class="footer-bottom">
+  © 2024 Organic. All rights reserved. | Developed by 
+  <a href="https://github.com/sathish05007" target="_blank">Sathish</a>
+</div>
+<!-- CART MODAL/SECTION -->
+<section id="cartSection" class="container my-5 d-none">
+  <h2>Your Cart</h2>
+  <ul id="cartItems" class="list-group mb-3"></ul>
+  <h4>Total: $<span id="cartTotalPrice">0.00</span></h4>
+</section>
+
+<!-- WISHLIST MODAL/SECTION -->
+<section id="wishlistSection" class="container my-5 d-none">
+  <h2>Your Wishlist</h2>
+  <ul id="wishlistItems" class="list-group mb-3"></ul>
+</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+
+      if(email === "abc@gmail.com" && password === "123") {
+        alert("Login successful! Redirecting...");
+        window.location.href = "main.html"; // your main website page
+      } else {
+        alert("Invalid email or password!");
+      }
+    });
+  </script>
+</body>
+</html>

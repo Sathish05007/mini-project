@@ -371,7 +371,7 @@
 }
 
 .add-cart:hover {
-  background: #218838;
+  background: gold;
 }
 
 .wishlist {
@@ -383,7 +383,8 @@
 }
 
 .wishlist:hover {
-  background: #ddd;
+  background: red;
+  color: white;
 }
 
     /* ADS */
