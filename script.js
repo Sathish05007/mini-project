@@ -48,8 +48,7 @@
 
   });
 
-
-  //MENU/NAV BAR
+  // MENU/NAV BAR
   function openMenu() {
     document.getElementById("sideMenu").style.width = "280px";
     document.getElementById("overlay").style.display = "block";
@@ -59,37 +58,39 @@
     document.getElementById("overlay").style.display = "none";
   }
 
+  document.addEventListener("DOMContentLoaded", () => {
+    let cartTotal = 0;
+    let wishTotal = 0;
 
-//CART AND WISHLIST COUNTER
-// Select counters
-const cartCount = document.getElementById("cartCount");
-const wishCount = document.getElementById("wishCount");
-
-// Track numbers
-let cartTotal = 0;
-let wishTotal = 0;
-
-// Add event listeners for cart buttons
-document.querySelectorAll(".add-cart").forEach(button => {
-  button.addEventListener("click", () => {
-    cartTotal++;
-    cartCount.textContent = cartTotal;
-  });
-});
-
-// Add event listeners for wishlist buttons
-document.querySelectorAll(".wishlist").forEach(button => {
-  button.addEventListener("click", () => {
-    // Toggle active state for wishlist
-    if (button.classList.contains("active")) {
-      button.classList.remove("active");
-      button.textContent = "♡"; // unliked
-      wishTotal--;
-    } else {
-      button.classList.add("active");
-      button.textContent = "❤"; // liked
-      wishTotal++;
+    function updateCartDisplay() {
+      document.querySelectorAll('.cart-count').forEach(el => el.textContent = cartTotal);
     }
-    wishCount.textContent = wishTotal;
+    function updateWishDisplay() {
+      document.querySelectorAll('.wish-count').forEach(el => el.textContent = wishTotal);
+    }
+
+    // Event delegation
+    document.body.addEventListener("click", (e) => {
+      if (e.target.closest(".add-cart")) {
+        cartTotal++;
+        updateCartDisplay();
+      }
+
+      if (e.target.closest(".wishlist")) {
+        const button = e.target.closest(".wishlist");
+        if (button.classList.contains("active")) {
+          button.classList.remove("active");
+          button.textContent = "♡";
+          wishTotal = Math.max(0, wishTotal - 1);
+        } else {
+          button.classList.add("active");
+          button.textContent = "❤";
+          wishTotal++;
+        }
+        updateWishDisplay();
+      }
+    });
+
+    updateCartDisplay();
+    updateWishDisplay();
   });
-});

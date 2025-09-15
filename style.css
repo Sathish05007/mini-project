@@ -5,6 +5,9 @@
    background-position: center;
    height: 100vh;
 }
+.text-muted p{
+  color: white !important;
+}
 
 .log img {
    margin: 20px;
