@@ -957,9 +957,13 @@ main{
   height: 5vh;
 }
 .img{
-background-size: contain;
-        width: 100%;
-        height: 40vh;
+    background-size: contain;
+    width: 100%;
+    height: 40vh;
+}
+.blog{
+    width: 100%;
+    height: auto;
 }
 }
 
@@ -1344,6 +1348,4 @@ height: 30vh;
 
   
 }
-
-
 /* write media to max width 650 */
